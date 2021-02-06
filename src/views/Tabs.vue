@@ -16,6 +16,11 @@
           <ion-icon :icon="square" />
           <ion-label>Tab 3</ion-label>
         </ion-tab-button>
+
+        <h1>A</h1>
+
+        <TabGeneric name="Generic Component" />
+
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>

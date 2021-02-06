@@ -26,7 +26,11 @@ import './theme/variables.css';
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
-  
-router.isReady().then(() => {
+
+app.component('tab-gen', {
+  template: `A`
+});
+
+  router.isReady().then(() => {
   app.mount('#app');
 });
