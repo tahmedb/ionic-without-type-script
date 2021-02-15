@@ -13,7 +13,7 @@ export default {
   data: () => ({
     tabs: [],
     childTabs: [
-      { tab: "tab1", icon: ellipse, route: "/tabs/tab1", label: "Tab 1" },
+      { tab: "tab1", icon: ellipse, route: "/tabs/tab1", label: "Home" },
       { tab: "tab3", icon: triangle, route: "/tabs/tab3", label: "Tab 3" },
       { tab: "tab4", icon: ellipse, route: "/tabs/tab4", label: "Tab 4" },
       { tab: "tab5", icon: square, route: "/tabs/tab5", label: "Tab 5" },
