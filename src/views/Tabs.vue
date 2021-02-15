@@ -13,6 +13,7 @@ export default {
   data: () => ({
     tabs: [],
     childTabs: [
+      { tab: "tab1", icon: ellipse, route: "/tabs/tab1", label: "Tab 1" },
       { tab: "tab3", icon: triangle, route: "/tabs/tab3", label: "Tab 3" },
       { tab: "tab4", icon: ellipse, route: "/tabs/tab4", label: "Tab 4" },
       { tab: "tab5", icon: square, route: "/tabs/tab5", label: "Tab 5" },
@@ -28,19 +29,30 @@ export default {
     $route(to) {
       //console.log("new route", to);
 
-      if (this.childTabs.map((x) => x.route).includes(to.fullPath)) {
+      if (
+        this.childTabs
+          .filter((x) => x.tab != "tab1")
+          .map((x) => x.route)
+          .includes(to.fullPath)
+      ) {
         if (
           this.tabs.map((x) => x.route).join() !==
           this.childTabs.map((x) => x.route).join()
-        ){ this.tabs = [];
+        ) {
+          this.tabs = [];
           setTimeout(() => {
             console.log("check1", this.childTabs.map((x) => x.route).join());
             console.log("check2", this.tabs.map((x) => x.route).join());
-           
+
             this.tabs = this.childTabs;
           }, 50);
         }
-      } else this.tabs = this.masterTabs;
+      } else {        
+          this.tabs = [];
+          setTimeout(() => {
+            this.tabs = this.masterTabs;
+          }, 50);        
+      }
     },
   },
   mounted() {
